@@ -44,6 +44,20 @@ Este modelo foi transformado em um **serviço de predição online via API**, pe
 
 ```
 
+## 📈 Registro de métricas com MLflow
+
+O script `model/train_model.py` registra hiperparâmetros e métricas de
+avaliação usando o **MLflow**. Para executar o treinamento e iniciar a
+interface de visualização dos experimentos, utilize:
+
+```bash
+python model/train_model.py
+mlflow ui
+```
+
+Isso cria a pasta `mlruns/` com os resultados e permite comparar as
+execuções para escolher o melhor modelo.
+
 ## 🚀 **4. Como Rodar o Docker**
 
 ### Construir a imagem Docker
