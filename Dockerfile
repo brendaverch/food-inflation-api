@@ -17,10 +17,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app
 
 # Roda o script que treina o modelo (gera modelo_rf.pkl e input_columns.pkl)
-RUN python train_model.py
+RUN python model/train_model.py
 
 # Expõe a porta usada pela API Flask
 EXPOSE 5000
 
 # Comando padrão ao iniciar o container
-CMD ["python", "app.py"]
+CMD ["python", "app/main.py"]

@@ -2,10 +2,14 @@
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
+from pathlib import Path
+
+# Caminho base do projeto (dois niveis acima deste arquivo)
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Carrega o modelo e as colunas usadas no treino
-model = joblib.load("modelo_rf.pkl")
-input_columns = joblib.load("input_columns.pkl")
+model = joblib.load(BASE_DIR / "model" / "modelo_rf.pkl")
+input_columns = joblib.load(BASE_DIR / "model" / "input_columns.pkl")
 
 app = Flask(__name__)
 
